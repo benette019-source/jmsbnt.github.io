@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Benette O. Morato - Quality Analyst Supervisor Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                        },
+                        ice: {
+                            400: '#38bdf8',
+                            500: '#3b82f6',
+                            300: '#7dd3fc',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 12px 24px -10px rgba(56, 189, 248, 0.15);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border {
+            border-image: linear-gradient(to right, #38bdf8, #3b82f6) 1;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .glass-card {
+                background: white !important;
+                border: 1px solid #ccc !important;
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-ice-400 selection:text-navy-900">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-navy-900/80 backdrop-blur-md border-b border-slate-800 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-ice-500 to-ice-400 flex items-center justify-center font-bold text-navy-900 text-lg shadow-lg shadow-ice-500/20">
+                        JM
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-white hidden sm:inline-block">James Benette Morato</span>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#about" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition">About</a>
+                    <a href="#metrics" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Highlights</a>
+                    <a href="#experience" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Experience</a>
+                    <a href="#skills" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Skills Matrix</a>
+                    <a href="#education" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Education</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="window.print()" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/50 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-medium flex items-center gap-2 transition">
+                        <i class="fa-solid fa-print text-ice-400">process</i>
+                        <span class="hidden sm:inline">Print / PDF</span>
+                    </button>
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-navy-900 px-4 pt-2 pb-4 space-y-1">
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">About</a>
+            <a href="#metrics" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Highlights</a>
+            <a href="#experience" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Experience</a>
+            <a href="#skills" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Skills Matrix</a>
+            <a href="#education" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Education</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Contact</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <!-- Hero / Header Section -->
+        <section id="about" class="pt-6">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <!-- Background Accent Glow -->
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-ice-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-12 relative z-10">
+                    <!-- Profile Picture / Avatar -->
+                    <div class="relative group">
+                        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border-2 border-ice-400/40 shadow-2xl bg-navy-800 flex items-center justify-center relative">
+                            <!-- Standard SVG Fallback or Styled User Graphic -->
+                            <div class="w-full h-full bg-slate-800 flex flex-col items-center justify-center text-slate-400 p-2">
+                                <i class="fa-solid fa-user-tie text-6xl text-ice-400 mb-2"></i>
+                                <span class="text-xs font-semibold text-center text-slate-300">James Benette</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-navy-900 p-2 rounded-xl text-xs font-bold flex items-center gap-1 shadow-lg">
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                            Available
+                        </div>
+                    </div>
+
+                    <!-- Profile Info -->
+                    <div class="flex-1 text-center md:text-left space-y-4">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ice-500/10 text-ice-400 text-xs font-semibold tracking-wide uppercase mb-3 border border-ice-500/20">
+                                Quality Assurance & Process Excellence
+                            </div>
+                            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                                James Benette O. Morato
+                            </h1>
+                            <p class="text-lg sm:text-xl font-medium text-ice-300 mt-1">
+                                Quality Analyst Supervisor / QA Operations Lead
+                            </p>
+                        </div>
+
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                            Results-driven QA Leader with over 10 years in BPO operations, specializing in Quality Auditing, Root Cause Analysis (RCA), Calibration, Process Improvement, and Multi-Domain Performance Management across Fintech, Telco, Content Moderation, and Logistics.
+                        </p>
+
+                        <!-- Contact Badges -->
+                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2 text-xs sm:text-sm text-slate-300">
+                            <span class="flex items-center gap-2 bg-navy-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+                                <i class="fa-solid fa-location-dot text-ice-400"></i> Antipolo City, Rizal, PH
+                            </span>
+                            <span class="flex items-center gap-2 bg-navy-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+                                <i class="fa-solid fa-phone text-ice-400"></i> 09054553319
+                            </span>
+                            <button onclick="copyEmail('benette019@gmail.com')" class="flex items-center gap-2 bg-navy-800/80 hover:bg-slate-700/80 px-3 py-1.5 rounded-lg border border-slate-700 text-ice-300 transition">
+                                <i class="fa-solid fa-envelope text-ice-400"></i> benette019@gmail.com
+                                <i class="fa-regular fa-copy text-xs ml-1 opacity-70"></i>
+                            </button>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                            <a href="#contact" class="px-6 py-3 rounded-xl bg-gradient-to-r from-ice-500 to-ice-400 text-navy-900 font-bold hover:shadow-lg hover:shadow-ice-500/25 transition transform active:scale-95 flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Get In Touch
+                            </a>
+                            <a href="#experience" class="px-6 py-3 rounded-xl bg-navy-800 hover:bg-slate-700 text-white font-semibold border border-slate-700 transition flex items-center gap-2">
+                                <i class="fa-solid fa-briefcase text-ice-400"></i> View Experience
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Dashboard Section -->
+        <section id="metrics" class="space-y-6">
+            <div class="border-l-4 border-ice-400 pl-4">
+                <h2 class="text-2xl font-bold text-white">Career Snapshot</h2>
+                <p class="text-slate-400 text-sm">Key professional milestones and operational scale</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Metric 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Industry Tenure</span>
+                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
+                            <i class="fa-solid fa-clock-rotate-left text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-extrabold text-white mb-1">10+ Years</div>
+                        <p class="text-xs text-slate-400">Total BPO & Customer Operations Excellence</p>
+                    </div>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Quality Leadership</span>
+                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
+                            <i class="fa-solid fa-clipboard-check text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-extrabold text-white mb-1">8+ Years</div>
+                        <p class="text-xs text-slate-400">Quality Assurance Auditing & RCA Lead</p>
+                    </div>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Domain Diversity</span>
+                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
+                            <i class="fa-solid fa-layer-group text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-extrabold text-white mb-1">6 Accounts</div>
+                        <p class="text-xs text-slate-400">Fintech, Telco, Content Mod, Ridesharing & Retail</p>
+                    </div>
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Daily Impact</span>
+                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-extrabold text-white mb-1">100+ Daily</div>
+                        <p class="text-xs text-slate-400">High-volume audits & customer interactions managed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Timeline Section -->
+        <section id="experience" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-ice-400 pl-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Work Experience</h2>
+                    <p class="text-slate-400 text-sm">Detailed history of leadership and QA execution</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="expand-all-btn" onclick="toggleAllExperience(true)" class="px-3 py-1.5 rounded-lg bg-navy-800 text-xs font-semibold text-ice-300 hover:bg-slate-700 transition">
+                        Expand All
+                    </button>
+                    <button id="collapse-all-btn" onclick="toggleAllExperience(false)" class="px-3 py-1.5 rounded-lg bg-navy-800 text-xs font-semibold text-slate-400 hover:bg-slate-700 transition">
+                        Collapse All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Experience Accordion Timeline -->
+            <div class="space-y-4">
+
+                <!-- Role 1: Movate -->
+                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCard('exp-movate')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
+                                M
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Quality Analyst Supervisor</h3>
+                                <p class="text-ice-400 font-medium text-sm">Movate</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 self-end sm:self-center">
+                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
+                                Oct 28, 2024 – Feb 20, 2026
+                            </span>
+                            <i id="icon-exp-movate" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+
+                    <div id="exp-movate" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-4 text-sm text-slate-300">
+                        <p class="text-slate-300 font-medium leading-relaxed">
+                            Supervised quality operations across multiple high-stakes accounts, conducting higher-level "Audit the Auditor" evaluations, spearheading calibration initiatives, and driving performance improvements.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-white flex items-center gap-2 text-xs uppercase tracking-wider text-ice-400">
+                                    <i class="fa-solid fa-check-double"></i> Key QA Deliverables
+                                </h4>
+                                <ul class="list-disc list-inside space-y-1 text-slate-300">
+                                    <li>Executed "Audit the Auditor" frameworks to ensure auditing consistency across quality teams.</li>
+                                    <li>Evaluated calls for BAU/ABAY audits and handled escalation call analysis.</li>
+                                    <li>Facilitated internal and external client calibration sessions to maintain policy alignment.</li>
+                                    <li>Developed comprehensive Data Visualization dashboards and client reports.</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-white flex items-center gap-2 text-xs uppercase tracking-wider text-ice-400">
+                                    <i class="fa-solid fa-cubes"></i> LOBs & Account Scope
+                                </h4>
+                                <div class="flex flex-wrap gap-1.5 pt-1">
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Financial Tech</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Telco</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Retail Account</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Kiosk (Buy, Sell & Trade)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2: Accenture -->
+                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCard('exp-accenture')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-800 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
+                                A
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Quality Analyst (CL 11)</h3>
+                                <p class="text-ice-400 font-medium text-sm">Accenture</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 self-end sm:self-center">
+                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
+                                Feb 19, 2024 – Aug 22, 2024
+                            </span>
+                            <i id="icon-exp-accenture" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+
+                    <div id="exp-accenture" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-4 text-sm text-slate-300">
+                        <p class="text-slate-300 font-medium">
+                            Focused on voice Telco performance quality, identifying operational gaps and aligning team results with strict client benchmarks.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            <li>Worked closely with Quality leaders to pinpoint top operational issues impacting accuracy and compliance.</li>
+                            <li>Evaluated 5-8 voice interactions daily while maintaining dispute resolution turnarounds.</li>
+                            <li>Executed rigorous Root Cause Analysis (RCA) focusing on DST, Average Handling Time (AHT), and Sales Pitch execution.</li>
+                            <li>Participated actively in internal and external calibrations to align operational guidelines with client policies.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3: TaskUs Inc. -->
+                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCard('exp-taskus')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-700 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
+                                T
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Quality Analyst & Customer Service Representative</h3>
+                                <p class="text-ice-400 font-medium text-sm">TaskUs Inc.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 self-end sm:self-center">
+                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
+                                Sept 14, 2016 – Dec 29, 2023
+                            </span>
+                            <i id="icon-exp-taskus" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+
+                    <div id="exp-taskus" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-6 text-sm text-slate-300">
+                        <!-- Sub-Role A -->
+                        <div class="space-y-2 border-l-2 border-ice-400 pl-4">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold text-white text-base">Quality Analyst (Content Moderation Campaign)</h4>
+                                <span class="text-xs text-slate-400">2020 – 2023</span>
+                            </div>
+                            <ul class="list-disc list-inside space-y-1 text-slate-300">
+                                <li>Conducted content auditing, dispute management, and prompt RCA reporting within tight SLAs.</li>
+                                <li>Analyzed account trends to construct structured data insights and actionable performance plans.</li>
+                                <li>Led internal/external calibration sessions ensuring policy alignment across teams.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sub-Role B -->
+                        <div class="space-y-2 border-l-2 border-slate-600 pl-4">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold text-white text-base">Customer Service Representative (Ridesharing Campaign)</h4>
+                                <span class="text-xs text-slate-400">2016 – 2020</span>
+                            </div>
+                            <p class="text-slate-300">
+                                Handled 100+ daily customer and partner interactions (Voice/Non-Voice) assisting with app troubleshooting, account status verification, and earnings tracking.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-1">
+                                <span class="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300">Chariot Eats (NAM)</span>
+                                <span class="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300">Chariot Partner Drivers & Riders (NAM & UKI)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 4: Convergys -->
+                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCard('exp-convergys')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-700 to-slate-800 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
+                                C
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Customer Service Representative</h3>
+                                <p class="text-ice-400 font-medium text-sm">Convergys Philippines</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 self-end sm:self-center">
+                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
+                                March 2015 – Sept 2016
+                            </span>
+                            <i id="icon-exp-convergys" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+
+                    <div id="exp-convergys" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-3 text-sm text-slate-300">
+                        <p class="text-slate-300 font-medium">
+                            Supported a global Online Payment Processor account via phone, chat, and email channels.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            <li>Managed 50+ daily high-touch customer interactions prioritizing client retention and satisfaction.</li>
+                            <li>Initiated targeted outbound calls informing clients on dispute and claim status updates.</li>
+                            <li>Delivered detailed, polite, and personalized resolution across multi-channel support.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills & Competencies Matrix Section -->
+        <section id="skills" class="space-y-6">
+            <div class="border-l-4 border-ice-400 pl-4">
+                <h2 class="text-2xl font-bold text-white">Skills Matrix</h2>
+                <p class="text-slate-400 text-sm">Categorized breakdown of operational, analytical, and leadership capabilities</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap gap-2 border-b border-slate-800 pb-4">
+                <button onclick="filterSkills('all')" class="skill-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-ice-500 text-navy-900 transition">
+                    All Skills
+                </button>
+                <button onclick="filterSkills('qa')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
+                    QA & Compliance
+                </button>
+                <button onclick="filterSkills('data')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
+                    Data & Analytics
+                </button>
+                <button onclick="filterSkills('leadership')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
+                    Leadership
+                </button>
+                <button onclick="filterSkills('tools')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
+                    Tools & Software
+                </button>
+                <button onclick="filterSkills('domains')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
+                    Domains
+                </button>
+            </div>
+
+            <!-- Skills Display Grid -->
+            <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Skill Card 1 -->
+                <div class="skill-item qa glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">QA Auditing & Calibration</h4>
+                        <p class="text-xs text-slate-400 mt-1">Audit the auditor, BAU/ABAY call evaluations, internal & client calibrations.</p>
+                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">QA & Compliance</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="skill-item data qa glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Root Cause Analysis (RCA)</h4>
+                        <p class="text-xs text-slate-400 mt-1">DST, AHT, Sales Pitch gap identification, and corrective action planning.</p>
+                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Data & Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="skill-item leadership glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Team Management & Coaching</h4>
+                        <p class="text-xs text-slate-400 mt-1">1-on-1 performance coaching, feedback delivery, and team accuracy alignment.</p>
+                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Leadership</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="skill-item data glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Data Visualization & Reporting</h4>
+                        <p class="text-xs text-slate-400 mt-1">Client reporting, program trends observation, and management dashboards.</p>
+                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Data & Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="skill-item tools glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Microsoft Excel Proficiency</h4>
+                        <p class="text-xs text-slate-400 mt-1">Advanced VLOOKUPs, Pivot Tables, performance metric tracking.</p>
+                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Tools & Software</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 6 -->
+                <div class="skill-item domains glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Multi-Domain Expertise</h4>
+                        <p class="text-xs text-slate-400 mt-1">Fintech, Telco, Content Moderation, Ridesharing, Retail, Buy/Sell/Trade.</p>
+                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Domains</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="space-y-6">
+            <div class="border-l-4 border-ice-400 pl-4">
+                <h2 class="text-2xl font-bold text-white">Education & Background</h2>
+                <p class="text-slate-400 text-sm">Academic foundations and background profile</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Academic Degree 1 -->
+                <div class="glass-card rounded-2xl p-6 flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs text-ice-400 font-semibold">Graduated S.Y. 2019 – 2020</span>
+                        <h3 class="text-lg font-bold text-white">Bachelor of Arts in Theology</h3>
+                        <p class="text-sm text-slate-300">All Nations College and Technology</p>
+                    </div>
+                </div>
+
+                <!-- Academic Degree 2 -->
+                <div class="glass-card rounded-2xl p-6 flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-book-bookmark text-xl"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs text-ice-400 font-semibold">Graduated S.Y. 2017 – 2018</span>
+                        <h3 class="text-lg font-bold text-white">Bachelor of Christian Education</h3>
+                        <p class="text-sm text-slate-300">Antioch Theological Seminary</p>
+                    </div>
+                </div>
+
+                <!-- High School -->
+                <div class="glass-card rounded-2xl p-6 flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-school text-lg"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs text-slate-400 font-semibold">Graduated S.Y. 2010 – 2011</span>
+                        <h3 class="text-base font-bold text-white">Secondary Education</h3>
+                        <p class="text-sm text-slate-300">Sta. Elena High School</p>
+                    </div>
+                </div>
+
+                <!-- Personal Info Card -->
+                <div class="glass-card rounded-2xl p-6 flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-id-card text-lg"></i>
+                    </div>
+                    <div class="space-y-1 text-sm text-slate-300">
+                        <h3 class="text-base font-bold text-white">Personal Profile</h3>
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 pt-1 text-xs">
+                            <span><strong class="text-slate-200">Age:</strong> 31 years old</span>
+                            <span><strong class="text-slate-200">Civil Status:</strong> Married</span>
+                            <span><strong class="text-slate-200">Location:</strong> Antipolo City</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Contact Section -->
+        <section id="contact" class="space-y-6">
+            <div class="border-l-4 border-ice-400 pl-4">
+                <h2 class="text-2xl font-bold text-white">Connect & Collaborate</h2>
+                <p class="text-slate-400 text-sm">Send a direct message or copy contact information</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Direct Info Panel -->
+                <div class="glass-card rounded-2xl p-6 space-y-6 lg:col-span-1">
+                    <h3 class="text-xl font-bold text-white">Contact Info</h3>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50">
+                            <div class="w-10 h-10 rounded-lg bg-ice-500/10 text-ice-400 flex items-center justify-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Mobile Phone</p>
+                                <a href="tel:09054553319" class="font-semibold text-white hover:text-ice-400 transition">09054553319</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50">
+                            <div class="w-10 h-10 rounded-lg bg-ice-500/10 text-ice-400 flex items-center justify-center">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Personal Email</p>
+                                <a href="mailto:benette019@gmail.com" class="font-semibold text-white hover:text-ice-400 transition">benette019@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50">
+                            <div class="w-10 h-10 rounded-lg bg-ice-500/10 text-ice-400 flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Address</p>
+                                <p class="font-semibold text-white">188 Ruhat 3, Mambugan, Antipolo City, Rizal 1870</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="copyEmail('benette019@gmail.com')" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-ice-300 font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-copy"></i> Copy Email Address
+                    </button>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-card rounded-2xl p-6 lg:col-span-2">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Send Message</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Your Name *</label>
+                                <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Your Email *</label>
+                                <input type="email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Subject</label>
+                            <input type="text" placeholder="QA Lead Inquiry / Opportunity" class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Message *</label>
+                            <textarea required rows="4" placeholder="Hello James, I would like to discuss..." class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="px-8 py-3 rounded-xl bg-gradient-to-r from-ice-500 to-ice-400 text-navy-900 font-bold hover:shadow-lg hover:shadow-ice-500/25 transition transform active:scale-95 flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-navy-900/80 py-8 mt-12 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>© <span id="current-year"></span> James Benette O. Morato. All rights reserved.</p>
+            <p class="flex items-center gap-1">
+                Built with Slate Grey-Blue Theme &bull; Interactive Portfolio
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // Set dynamic current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toggle Experience Accordion Cards
+        function toggleCard(id) {
+            const cardContent = document.getElementById(id);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (cardContent.classList.contains('hidden')) {
+                cardContent.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                cardContent.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function toggleAllExperience(expand) {
+            const cards = ['exp-movate', 'exp-accenture', 'exp-taskus', 'exp-convergys'];
+            cards.forEach(id => {
+                const cardContent = document.getElementById(id);
+                const icon = document.getElementById(`icon-${id}`);
+                if (expand) {
+                    cardContent.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    cardContent.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+
+        // Filter Skills Matrix
+        function filterSkills(category) {
+            const skillItems = document.querySelectorAll('.skill-item');
+            const buttons = document.querySelectorAll('.skill-tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-ice-500', 'text-navy-900');
+                btn.classList.add('bg-navy-800', 'text-slate-300');
+            });
+
+            event.currentTarget.classList.add('active', 'bg-ice-500', 'text-navy-900');
+            event.currentTarget.classList.remove('bg-navy-800', 'text-slate-300');
+
+            skillItems.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Copy Email function with fallback clipboard exec
+        function copyEmail(email) {
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast('Email address copied to clipboard!');
+        }
+
+        // Handle Contact Form Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! Your message has been sent successfully.');
+            document.getElementById('contact-form').reset();
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-800 border border-ice-400/40 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-2 pointer-events-auto';
+            toast.innerHTML = `
+                <i class="fa-solid fa-circle-check text-ice-400 text-lg"></i>
+                <span class="text-xs sm:text-sm font-medium">${message}</span>
+            `;
+            
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-[-10px]');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
