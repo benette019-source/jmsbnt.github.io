@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Benette O. Morato - Interactive Portfolio</title>
+    <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -36,6 +37,7 @@
             overflow-x: hidden;
         }
 
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -183,7 +185,7 @@
             transform: translateY(-2px);
         }
 
-        /* Profile Image */
+        /* Profile Image Container */
         .hero-image-wrapper {
             position: relative;
         }
@@ -479,261 +481,6 @@
             margin-top: 60px;
         }
 
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 100px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .hero-image {
-                width: 220px;
-                height: 220px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#" class="logo">James<span>.Morato</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Container -->
-    <div class="container">
-        
-        <!-- Hero Section -->
-        <section id="about" class="hero">
-            <div class="hero-content">
-                <div class="badge">
-                    <i class="fa-solid fa-circle-check"></i> Quality Assurance & Training Specialist
-                </div>
-                <h1>James Benette O. Morato</h1>
-                <h2>10+ Years in Quality Assurance, Training & Operations</h2>
-                <p>
-                    Dedicated QA Leader and Specialist with extensive expertise across Insurance Back Office, Financial Tech, Telco, Content Moderation, and Logistics campaigns. Proven track record in root cause analysis, process calibrations, and performance optimization.
-                </p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
-                    <a href="#experience" class="btn btn-secondary"><i class="fa-solid fa-briefcase"></i> View Experience</a>
-                </div>
-            </div>
-            <div class="hero-image-wrapper">
-                <img src="profile.png" alt="James Benette O. Morato" class="hero-image" onerror="this.onerror=null; this.src='https://via.placeholder.com/320x320/1e293b/38bdf8?text=James+Morato';">
-            </div>
-        </section>
-
-        <!-- Stat Highlights -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Years BPO Experience</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">6+</div>
-                <div class="stat-label">Years QA / Supervisory Roles</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">6+</div>
-                <div class="stat-label">Industry Domains Handled</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Commitment to Compliance</div>
-            </div>
-        </div>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="section-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--accent-primary);"></i> Work Experience</h2>
-            <div class="timeline">
-
-                <!-- ReSource Pro -->
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Training and Quality Analyst</div>
-                                <div class="company-name">ReSource Pro (Back Office Insurance)</div>
-                            </div>
-                            <span class="date-badge">March 2026 – Present</span>
-                        </div>
-                        <ul class="timeline-bullets">
-                            <li>Conducting specialized training programs and quality assurance evaluations for back-office insurance operations.</li>
-                            <li>Performing comprehensive quality auditing, process monitoring, and compliance tracking.</li>
-                            <li>Executing Root Cause Analysis (RCA) on operational gaps to formulate effective performance strategies.</li>
-                            <li>Generating detailed metrics reports and analytical summaries for stakeholders.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Movate -->
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Quality Analyst Supervisor</div>
-                                <div class="company-name">Movate</div>
-                            </div>
-                            <span class="date-badge">Oct 2024 – Feb 2026</span>
-                        </div>
-                        <ul class="timeline-bullets">
-                            <li>Led Quality Assurance evaluations ("Audit the Auditor"), calibration sessions, and compliance monitoring across multiple accounts including Telco, Retail, and Kiosk (Buy/Sell/Trade).</li>
-                            <li>Managed financial tech account data management, reports, and BAU/ABAY call evaluations.</li>
-                            <li>Facilitated internal and external calibrations to maintain alignment with client SLA standards and operational policies.</li>
-                            <li>Executed Root Cause Analysis (RCA) and escalation handling to drive process improvements.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Accenture -->
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Quality Analyst CL 11</div>
-                                <div class="company-name">Accenture (Voice Telco Account)</div>
-                            </div>
-                            <span class="date-badge">Feb 2024 – Aug 2024</span>
-                        </div>
-                        <ul class="timeline-bullets">
-                            <li>Partnered with Quality leadership to identify key driver metrics impacting team accuracy and compliance.</li>
-                            <li>Evaluated calls daily, addressed audit disputes, and performed in-depth RCA on DST, AHT, and Sales Pitch performance.</li>
-                            <li>Participated actively in internal and client calibration meetings to ensure baseline policy alignment.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- TaskUs -->
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Quality Analyst / CSR</div>
-                                <div class="company-name">TaskUs Inc.</div>
-                            </div>
-                            <span class="date-badge">Sept 2016 – Dec 2023</span>
-                        </div>
-                        <ul class="timeline-bullets">
-                          ms: center;
-            gap: 10px;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            padding: 8px 14px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 0.88rem;
-            color: var(--text-main);
-            transition: all 0.3s ease;
-        }
-
-        .tag:hover {
-            background: rgba(56, 189, 248, 0.1);
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-        }
-
-        /* Education Section */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .edu-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 24px;
-            border-radius: 16px;
-        }
-
-        .edu-degree {
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 5px;
-        }
-
-        .edu-school {
-            color: var(--accent-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-        }
-
-        .edu-year {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Contact Section */
-        .contact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-details {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-muted);
-        }
-
-        .contact-item i {
-            color: var(--accent-primary);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 30px 0;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 60px;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
@@ -891,287 +638,27 @@
                                 <div class="company-name">TaskUs Inc.</div>
                             </div>
                             <span class="date-badge">Sept 2016 – Dec 2023</span>
-                specializing in Quality Auditing, Root Cause Analysis (RCA), Calibration, Process Improvement, and Multi-Domain Performance Management across Fintech, Telco, Content Moderation, and Logistics.
-                        </p>
-
-                        <!-- Contact Badges -->
-                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2 text-xs sm:text-sm text-slate-300">
-                            <span class="flex items-center gap-2 bg-navy-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
-                                <i class="fa-solid fa-location-dot text-ice-400"></i> Antipolo City, Rizal, PH
-                            </span>
-                            <span class="flex items-center gap-2 bg-navy-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
-                                <i class="fa-solid fa-phone text-ice-400"></i> 09054553319
-                            </span>
-                            <button onclick="copyEmail('benette019@gmail.com')" class="flex items-center gap-2 bg-navy-800/80 hover:bg-slate-700/80 px-3 py-1.5 rounded-lg border border-slate-700 text-ice-300 transition">
-                                <i class="fa-solid fa-envelope text-ice-400"></i> benette019@gmail.com
-                                <i class="fa-regular fa-copy text-xs ml-1 opacity-70"></i>
-                            </button>
                         </div>
-
-                        <!-- Action Buttons -->
-                        <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-                            <a href="#contact" class="px-6 py-3 rounded-xl bg-gradient-to-r from-ice-500 to-ice-400 text-navy-900 font-bold hover:shadow-lg hover:shadow-ice-500/25 transition transform active:scale-95 flex items-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> Get In Touch
-                            </a>
-                            <a href="#experience" class="px-6 py-3 rounded-xl bg-navy-800 hover:bg-slate-700 text-white font-semibold border border-slate-700 transition flex items-center gap-2">
-                                <i class="fa-solid fa-briefcase text-ice-400"></i> View Experience
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Metrics Dashboard Section -->
-        <section id="metrics" class="space-y-6">
-            <div class="border-l-4 border-ice-400 pl-4">
-                <h2 class="text-2xl font-bold text-white">Career Snapshot</h2>
-                <p class="text-slate-400 text-sm">Key professional milestones and operational scale</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <!-- Metric 1 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Industry Tenure</span>
-                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
-                            <i class="fa-solid fa-clock-rotate-left text-lg"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-extrabold text-white mb-1">10+ Years</div>
-                        <p class="text-xs text-slate-400">Total BPO & Customer Operations Excellence</p>
-                    </div>
-                </div>
-
-                <!-- Metric 2 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Quality Leadership</span>
-                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
-                            <i class="fa-solid fa-clipboard-check text-lg"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-extrabold text-white mb-1">8+ Years</div>
-                        <p class="text-xs text-slate-400">Quality Assurance Auditing & RCA Lead</p>
-                    </div>
-                </div>
-
-                <!-- Metric 3 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Domain Diversity</span>
-                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
-                            <i class="fa-solid fa-layer-group text-lg"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-extrabold text-white mb-1">6 Accounts</div>
-                        <p class="text-xs text-slate-400">Fintech, Telco, Content Mod, Ridesharing & Retail</p>
-                    </div>
-                </div>
-
-                <!-- Metric 4 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Daily Impact</span>
-                        <div class="w-10 h-10 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center">
-                            <i class="fa-solid fa-chart-line text-lg"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-extrabold text-white mb-1">100+ Daily</div>
-                        <p class="text-xs text-slate-400">High-volume audits & customer interactions managed</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Experience Timeline Section -->
-        <section id="experience" class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-ice-400 pl-4">
-                <div>
-                    <h2 class="text-2xl font-bold text-white">Work Experience</h2>
-                    <p class="text-slate-400 text-sm">Detailed history of leadership and QA execution</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <button id="expand-all-btn" onclick="toggleAllExperience(true)" class="px-3 py-1.5 rounded-lg bg-navy-800 text-xs font-semibold text-ice-300 hover:bg-slate-700 transition">
-                        Expand All
-                    </button>
-                    <button id="collapse-all-btn" onclick="toggleAllExperience(false)" class="px-3 py-1.5 rounded-lg bg-navy-800 text-xs font-semibold text-slate-400 hover:bg-slate-700 transition">
-                        Collapse All
-                    </button>
-                </div>
-            </div>
-
-            <!-- Experience Accordion Timeline -->
-            <div class="space-y-4">
-
-                <!-- Role 1: Movate -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleCard('exp-movate')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
-                                M
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Quality Analyst Supervisor</h3>
-                                <p class="text-ice-400 font-medium text-sm">Movate</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 self-end sm:self-center">
-                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
-                                Oct 28, 2024 – Feb 20, 2026
-                            </span>
-                            <i id="icon-exp-movate" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
-                        </div>
-                    </button>
-
-                    <div id="exp-movate" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-4 text-sm text-slate-300">
-                        <p class="text-slate-300 font-medium leading-relaxed">
-                            Supervised quality operations across multiple high-stakes accounts, conducting higher-level "Audit the Auditor" evaluations, spearheading calibration initiatives, and driving performance improvements.
-                        </p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                            <div class="space-y-2">
-                                <h4 class="font-semibold text-white flex items-center gap-2 text-xs uppercase tracking-wider text-ice-400">
-                                    <i class="fa-solid fa-check-double"></i> Key QA Deliverables
-                                </h4>
-                                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                                    <li>Executed "Audit the Auditor" frameworks to ensure auditing consistency across quality teams.</li>
-                                    <li>Evaluated calls for BAU/ABAY audits and handled escalation call analysis.</li>
-                                    <li>Facilitated internal and external client calibration sessions to maintain policy alignment.</li>
-                                    <li>Developed comprehensive Data Visualization dashboards and client reports.</li>
-                                </ul>
-                            </div>
-                            <div class="space-y-2">
-                                <h4 class="font-semibold text-white flex items-center gap-2 text-xs uppercase tracking-wider text-ice-400">
-                                    <i class="fa-solid fa-cubes"></i> LOBs & Account Scope
-                                </h4>
-                                <div class="flex flex-wrap gap-1.5 pt-1">
-                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Financial Tech</span>
-                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Telco</span>
-                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Retail Account</span>
-                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-xs">Kiosk (Buy, Sell & Trade)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Role 2: Accenture -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleCard('exp-accenture')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-800 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
-                                A
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Quality Analyst (CL 11)</h3>
-                                <p class="text-ice-400 font-medium text-sm">Accenture</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 self-end sm:self-center">
-                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
-                                Feb 19, 2024 – Aug 22, 2024
-                            </span>
-                            <i id="icon-exp-accenture" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
-                        </div>
-                    </button>
-
-                    <div id="exp-accenture" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-4 text-sm text-slate-300">
-                        <p class="text-slate-300 font-medium">
-                            Focused on voice Telco performance quality, identifying operational gaps and aligning team results with strict client benchmarks.
-                        </p>
-                        <ul class="list-disc list-inside space-y-1 text-slate-300">
-                            <li>Worked closely with Quality leaders to pinpoint top operational issues impacting accuracy and compliance.</li>
-                            <li>Evaluated 5-8 voice interactions daily while maintaining dispute resolution turnarounds.</li>
-                            <li>Executed rigorous Root Cause Analysis (RCA) focusing on DST, Average Handling Time (AHT), and Sales Pitch execution.</li>
-                            <li>Participated actively in internal and external calibrations to align operational guidelines with client policies.</li>
+                        <ul class="timeline-bullets">
+                            <li><strong>Quality Analyst (Content Moderation):</strong> Audited content, managed disputes, built trend analysis, and provided action plans within strict timeframes.</li>
+                            <li><strong>CSR (Ridesharing / Delivery):</strong> Handled 100+ daily interactions across Chariot Eats and Chariot Partner Drivers (NAM/UKI), troubleshooting app issues and assisting driver partner earnings.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Role 3: TaskUs Inc. -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleCard('exp-taskus')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-700 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
-                                T
-                            </div>
+                <!-- Convergys -->
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
                             <div>
-                                <h3 class="text-xl font-bold text-white">Quality Analyst & Customer Service Representative</h3>
-                                <p class="text-ice-400 font-medium text-sm">TaskUs Inc.</p>
+                                <div class="role-title">Customer Service Representative</div>
+                                <div class="company-name">Convergys Philippines</div>
                             </div>
+                            <span class="date-badge">March 2015 – Sept 2016</span>
                         </div>
-                        <div class="flex items-center gap-4 self-end sm:self-center">
-                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
-                                Sept 14, 2016 – Dec 29, 2023
-                            </span>
-                            <i id="icon-exp-taskus" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
-                        </div>
-                    </button>
-
-                    <div id="exp-taskus" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-6 text-sm text-slate-300">
-                        <!-- Sub-Role A -->
-                        <div class="space-y-2 border-l-2 border-ice-400 pl-4">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-white text-base">Quality Analyst (Content Moderation Campaign)</h4>
-                                <span class="text-xs text-slate-400">2020 – 2023</span>
-                            </div>
-                            <ul class="list-disc list-inside space-y-1 text-slate-300">
-                                <li>Conducted content auditing, dispute management, and prompt RCA reporting within tight SLAs.</li>
-                                <li>Analyzed account trends to construct structured data insights and actionable performance plans.</li>
-                                <li>Led internal/external calibration sessions ensuring policy alignment across teams.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Sub-Role B -->
-                        <div class="space-y-2 border-l-2 border-slate-600 pl-4">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-bold text-white text-base">Customer Service Representative (Ridesharing Campaign)</h4>
-                                <span class="text-xs text-slate-400">2016 – 2020</span>
-                            </div>
-                            <p class="text-slate-300">
-                                Handled 100+ daily customer and partner interactions (Voice/Non-Voice) assisting with app troubleshooting, account status verification, and earnings tracking.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-1">
-                                <span class="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300">Chariot Eats (NAM)</span>
-                                <span class="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300">Chariot Partner Drivers & Riders (NAM & UKI)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Role 4: Convergys -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleCard('exp-convergys')" class="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-700 to-slate-800 text-white font-bold flex items-center justify-center shrink-0 shadow-md">
-                                C
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Customer Service Representative</h3>
-                                <p class="text-ice-400 font-medium text-sm">Convergys Philippines</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 self-end sm:self-center">
-                            <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
-                                March 2015 – Sept 2016
-                            </span>
-                            <i id="icon-exp-convergys" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
-                        </div>
-                    </button>
-
-                    <div id="exp-convergys" class="px-6 pb-6 pt-2 hidden border-t border-slate-800/60 space-y-3 text-sm text-slate-300">
-                        <p class="text-slate-300 font-medium">
-                            Supported a global Online Payment Processor account via phone, chat, and email channels.
-                        </p>
-                        <ul class="list-disc list-inside space-y-1 text-slate-300">
-                            <li>Managed 50+ daily high-touch customer interactions prioritizing client retention and satisfaction.</li>
-                            <li>Initiated targeted outbound calls informing clients on dispute and claim status updates.</li>
-                            <li>Delivered detailed, polite, and personalized resolution across multi-channel support.</li>
+                        <ul class="timeline-bullets">
+                            <li>Managed 50+ daily customer interactions for an Online Payment Processor account via voice, chat, and email.</li>
+                            <li>Conducted outbound dispute/claim follow-ups, prioritizing customer retention and polite, personalized support.</li>
                         </ul>
                     </div>
                 </div>
@@ -1179,107 +666,50 @@
             </div>
         </section>
 
-        <!-- Skills & Competencies Matrix Section -->
-        <section id="skills" class="space-y-6">
-            <div class="border-l-4 border-ice-400 pl-4">
-                <h2 class="text-2xl font-bold text-white">Skills Matrix</h2>
-                <p class="text-slate-400 text-sm">Categorized breakdown of operational, analytical, and leadership capabilities</p>
-            </div>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group" style="color: var(--accent-primary);"></i> Skills & Toolset</h2>
+            <div class="skills-grid">
 
-            <!-- Filter Tabs -->
-            <div class="flex flex-wrap gap-2 border-b border-slate-800 pb-4">
-                <button onclick="filterSkills('all')" class="skill-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-ice-500 text-navy-900 transition">
-                    All Skills
-                </button>
-                <button onclick="filterSkills('qa')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
-                    QA & Compliance
-                </button>
-                <button onclick="filterSkills('data')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
-                    Data & Analytics
-                </button>
-                <button onclick="filterSkills('leadership')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
-                    Leadership
-                </button>
-                <button onclick="filterSkills('tools')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
-                    Tools & Software
-                </button>
-                <button onclick="filterSkills('domains')" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-800 text-slate-300 hover:bg-slate-700 transition">
-                    Domains
-                </button>
-            </div>
-
-            <!-- Skills Display Grid -->
-            <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                
-                <!-- Skill Card 1 -->
-                <div class="skill-item qa glass-card p-5 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white text-base">QA Auditing & Calibration</h4>
-                        <p class="text-xs text-slate-400 mt-1">Audit the auditor, BAU/ABAY call evaluations, internal & client calibrations.</p>
-                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">QA & Compliance</span>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-list-check"></i> Quality Assurance</h3>
+                    <div class="skill-tags">
+                        <span class="tag">QA Auditing (Call/Chat/Email)</span>
+                        <span class="tag">Process Improvement</span>
+                        <span class="tag">Calibration Leadership</span>
+                        <span class="tag">Compliance Monitoring</span>
+                        <span class="tag">Audit the Auditor</span>
                     </div>
                 </div>
 
-                <!-- Skill Card 2 -->
-                <div class="skill-item data qa glass-card p-5 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
-                        <i class="fa-solid fa-diagram-project"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white text-base">Root Cause Analysis (RCA)</h4>
-                        <p class="text-xs text-slate-400 mt-1">DST, AHT, Sales Pitch gap identification, and corrective action planning.</p>
-                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Data & Analytics</span>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-chart-pie"></i> Data & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Root Cause Analysis (RCA)</span>
+                        <span class="tag">Data Visualization</span>
+                        <span class="tag">Client Reporting</span>
+                        <span class="tag">Performance Metrics Track</span>
                     </div>
                 </div>
 
-                <!-- Skill Card 3 -->
-                <div class="skill-item leadership glass-card p-5 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
-                        <i class="fa-solid fa-users-gear"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white text-base">Team Management & Coaching</h4>
-                        <p class="text-xs text-slate-400 mt-1">1-on-1 performance coaching, feedback delivery, and team accuracy alignment.</p>
-                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Leadership</span>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-laptop-code"></i> Software & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="tag">MS Excel (VLOOKUP, Pivot Tables)</span>
+                        <span class="tag">MS PowerPoint</span>
+                        <span class="tag">MS Word</span>
+                        <span class="tag">Data Reporting Tools</span>
                     </div>
                 </div>
 
-                <!-- Skill Card 4 -->
-                <div class="skill-item data glass-card p-5 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
-                        <i class="fa-solid fa-chart-pie"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white text-base">Data Visualization & Reporting</h4>
-                        <p class="text-xs text-slate-400 mt-1">Client reporting, program trends observation, and management dashboards.</p>
-                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Data & Analytics</span>
-                    </div>
-                </div>
-
-                <!-- Skill Card 5 -->
-                <div class="skill-item tools glass-card p-5 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
-                        <i class="fa-solid fa-file-excel"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white text-base">Microsoft Excel Proficiency</h4>
-                        <p class="text-xs text-slate-400 mt-1">Advanced VLOOKUPs, Pivot Tables, performance metric tracking.</p>
-                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Tools & Software</span>
-                    </div>
-                </div>
-
-                <!-- Skill Card 6 -->
-                <div class="skill-item domains glass-card p-5 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 rounded-xl bg-ice-500/10 text-ice-400 text-xl">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white text-base">Multi-Domain Expertise</h4>
-                        <p class="text-xs text-slate-400 mt-1">Fintech, Telco, Content Moderation, Ridesharing, Retail, Buy/Sell/Trade.</p>
-                        <span class="inline-block mt-3 px-2 py-0.5 rounded bg-slate-800 text-[10px] text-ice-300 font-semibold uppercase tracking-wider">Domains</span>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-building"></i> Domain Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Insurance Back Office</span>
+                        <span class="tag">Financial Tech</span>
+                        <span class="tag">Telco</span>
+                        <span class="tag">Ridesharing & Logistics</span>
+                        <span class="tag">Content Moderation</span>
                     </div>
                 </div>
 
@@ -1287,266 +717,68 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="space-y-6">
-            <div class="border-l-4 border-ice-400 pl-4">
-                <h2 class="text-2xl font-bold text-white">Education & Background</h2>
-                <p class="text-slate-400 text-sm">Academic foundations and background profile</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Academic Degree 1 -->
-                <div class="glass-card rounded-2xl p-6 flex gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-graduation-cap text-xl"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <span class="text-xs text-ice-400 font-semibold">Graduated S.Y. 2019 – 2020</span>
-                        <h3 class="text-lg font-bold text-white">Bachelor of Arts in Theology</h3>
-                        <p class="text-sm text-slate-300">All Nations College and Technology</p>
-                    </div>
+        <section id="education">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary);"></i> Education</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-degree">Bachelor of Arts in Theology</div>
+                    <div class="edu-school">All Nations College and Technology</div>
+                    <div class="edu-year">Graduated: S.Y. 2019 - 2020</div>
                 </div>
-
-                <!-- Academic Degree 2 -->
-                <div class="glass-card rounded-2xl p-6 flex gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-ice-500/10 text-ice-400 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-book-bookmark text-xl"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <span class="text-xs text-ice-400 font-semibold">Graduated S.Y. 2017 – 2018</span>
-                        <h3 class="text-lg font-bold text-white">Bachelor of Christian Education</h3>
-                        <p class="text-sm text-slate-300">Antioch Theological Seminary</p>
-                    </div>
+                <div class="edu-card">
+                    <div class="edu-degree">Bachelor of Christian Education</div>
+                    <div class="edu-school">Antioch Theological Seminary</div>
+                    <div class="edu-year">Graduated: S.Y. 2017 - 2018</div>
                 </div>
-
-                <!-- High School -->
-                <div class="glass-card rounded-2xl p-6 flex gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-school text-lg"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <span class="text-xs text-slate-400 font-semibold">Graduated S.Y. 2010 – 2011</span>
-                        <h3 class="text-base font-bold text-white">Secondary Education</h3>
-                        <p class="text-sm text-slate-300">Sta. Elena High School</p>
-                    </div>
-                </div>
-
-                <!-- Personal Info Card -->
-                <div class="glass-card rounded-2xl p-6 flex gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-id-card text-lg"></i>
-                    </div>
-                    <div class="space-y-1 text-sm text-slate-300">
-                        <h3 class="text-base font-bold text-white">Personal Profile</h3>
-                        <div class="flex flex-wrap gap-x-4 gap-y-1 pt-1 text-xs">
-                            <span><strong class="text-slate-200">Age:</strong> 31 years old</span>
-                            <span><strong class="text-slate-200">Civil Status:</strong> Married</span>
-                            <span><strong class="text-slate-200">Location:</strong> Antipolo City</span>
-                        </div>
-                    </div>
+                <div class="edu-card">
+                    <div class="edu-degree">Secondary Education</div>
+                    <div class="edu-school">Sta. Elena High School</div>
+                    <div class="edu-year">Graduated: S.Y. 2010 - 2011</div>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Contact Section -->
-        <section id="contact" class="space-y-6">
-            <div class="border-l-4 border-ice-400 pl-4">
-                <h2 class="text-2xl font-bold text-white">Connect & Collaborate</h2>
-                <p class="text-slate-400 text-sm">Send a direct message or copy contact information</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Direct Info Panel -->
-                <div class="glass-card rounded-2xl p-6 space-y-6 lg:col-span-1">
-                    <h3 class="text-xl font-bold text-white">Contact Info</h3>
-                    
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50">
-                            <div class="w-10 h-10 rounded-lg bg-ice-500/10 text-ice-400 flex items-center justify-center">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Mobile Phone</p>
-                                <a href="tel:09054553319" class="font-semibold text-white hover:text-ice-400 transition">09054553319</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50">
-                            <div class="w-10 h-10 rounded-lg bg-ice-500/10 text-ice-400 flex items-center justify-center">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Personal Email</p>
-                                <a href="mailto:benette019@gmail.com" class="font-semibold text-white hover:text-ice-400 transition">benette019@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50">
-                            <div class="w-10 h-10 rounded-lg bg-ice-500/10 text-ice-400 flex items-center justify-center">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Address</p>
-                                <p class="font-semibold text-white">188 Ruhat 3, Mambugan, Antipolo City, Rizal 1870</p>
-                            </div>
-                        </div>
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-card">
+                <h2>Let's Connect</h2>
+                <p style="color: var(--text-muted); margin-top: 10px;">Feel free to reach out for Quality Assurance, Training, or Leadership opportunities.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>benette019@gmail.com</span>
                     </div>
-
-                    <button onclick="copyEmail('benette019@gmail.com')" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-ice-300 font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
-                        <i class="fa-regular fa-copy"></i> Copy Email Address
-                    </button>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>09054553319</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Antipolo City, Rizal, Philippines</span>
+                    </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="glass-card rounded-2xl p-6 lg:col-span-2">
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                        <h3 class="text-xl font-bold text-white mb-2">Send Message</h3>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1">Your Name *</label>
-                                <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1">Your Email *</label>
-                                <input type="email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-slate-300 mb-1">Subject</label>
-                            <input type="text" placeholder="QA Lead Inquiry / Opportunity" class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-slate-300 mb-1">Message *</label>
-                            <textarea required rows="4" placeholder="Hello James, I would like to discuss..." class="w-full px-4 py-2.5 rounded-xl bg-navy-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ice-400 transition"></textarea>
-                        </div>
-
-                        <button type="submit" class="px-8 py-3 rounded-xl bg-gradient-to-r from-ice-500 to-ice-400 text-navy-900 font-bold hover:shadow-lg hover:shadow-ice-500/25 transition transform active:scale-95 flex items-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                </div>
+                <button class="btn btn-primary" onclick="copyEmail()">
+                    <i class="fa-solid fa-copy"></i> Copy Email Address
+                </button>
             </div>
         </section>
 
-    </main>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 James Benette O. Morato. Designed with Grey-Blue Theme.</p>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-navy-900/80 py-8 mt-12 no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <p>© <span id="current-year"></span> James Benette O. Morato. All rights reserved.</p>
-            <p class="flex items-center gap-1">
-                Built with Slate Grey-Blue Theme &bull; Interactive Portfolio
-            </p>
-        </div>
-    </footer>
+    </div>
 
-    <!-- Interactive JavaScript Logic -->
     <script>
-        // Set dynamic current year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        function copyEmail() {
+            navigator.clipboard.writeText('benette019@gmail.com').then(() => {
+                alert('Email address (benette019@gmail.com) copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
             });
-        });
-
-        // Toggle Experience Accordion Cards
-        function toggleCard(id) {
-            const cardContent = document.getElementById(id);
-            const icon = document.getElementById(`icon-${id}`);
-            
-            if (cardContent.classList.contains('hidden')) {
-                cardContent.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                cardContent.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        function toggleAllExperience(expand) {
-            const cards = ['exp-movate', 'exp-accenture', 'exp-taskus', 'exp-convergys'];
-            cards.forEach(id => {
-                const cardContent = document.getElementById(id);
-                const icon = document.getElementById(`icon-${id}`);
-                if (expand) {
-                    cardContent.classList.remove('hidden');
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    cardContent.classList.add('hidden');
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            });
-        }
-
-        // Filter Skills Matrix
-        function filterSkills(category) {
-            const skillItems = document.querySelectorAll('.skill-item');
-            const buttons = document.querySelectorAll('.skill-tab-btn');
-
-            buttons.forEach(btn => {
-                btn.classList.remove('active', 'bg-ice-500', 'text-navy-900');
-                btn.classList.add('bg-navy-800', 'text-slate-300');
-            });
-
-            event.currentTarget.classList.add('active', 'bg-ice-500', 'text-navy-900');
-            event.currentTarget.classList.remove('bg-navy-800', 'text-slate-300');
-
-            skillItems.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Copy Email function with fallback clipboard exec
-        function copyEmail(email) {
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            showToast('Email address copied to clipboard!');
-        }
-
-        // Handle Contact Form Submission
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            showToast('Thank you! Your message has been sent successfully.');
-            document.getElementById('contact-form').reset();
-        }
-
-        // Toast Notification System
-        function showToast(message) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = 'bg-slate-800 border border-ice-400/40 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-2 pointer-events-auto';
-            toast.innerHTML = `
-                <i class="fa-solid fa-circle-check text-ice-400 text-lg"></i>
-                <span class="text-xs sm:text-sm font-medium">${message}</span>
-            `;
-            
-            container.appendChild(toast);
-
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-[-10px]');
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
         }
     </script>
 </body>
