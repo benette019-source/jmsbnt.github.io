@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Benette O. Morato | Training & Quality Analyst</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #334155;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800 transition-colors duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="w-3 h-3 bg-brand-500 rounded-full animate-pulse"></span>
+                    <a href="#" class="font-bold text-xl tracking-tight text-white hover:text-brand-400 transition">
+                        James <span class="text-brand-500">Morato</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#about" class="hover:text-brand-400 transition">About</a>
+                    <a href="#experience" class="hover:text-brand-400 transition">Experience</a>
+                    <a href="#skills" class="hover:text-brand-400 transition">Skills & Expertise</a>
+                    <a href="#education" class="hover:text-brand-400 transition">Education</a>
+                    <a href="#contact" class="hover:text-brand-400 transition">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition" title="Toggle Theme">
+                        <i class="fa-solid fa-moon text-lg" id="themeIcon"></i>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">About</a>
+            <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Experience</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Skills</a>
+            <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Education</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+        <!-- Hero / About Section -->
+        <section id="about" class="py-16 lg:py-24 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Profile Photo & Ring -->
+                    <div class="lg:col-span-5 flex flex-col items-center">
+                        <div class="relative group">
+                            <!-- Glowing aura -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-slate-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                            <!-- Image Container -->
+                            <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl bg-slate-800">
+                                <img src="profile.png" 
+                                     alt="James Benette O. Morato" 
+                                     class="w-full h-full object-cover object-top"
+                                     onerror="this.src='https://placehold.co/400x400/334155/ffffff?text=James+Morato'">
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Stats Badge Bar -->
+                        <div class="mt-6 flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full border border-slate-700">
+                                <i class="fa-solid fa-shield-halved text-brand-500 mr-1"></i> QA Analytics
+                            </span>
+                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full border border-slate-700">
+                                <i class="fa-solid fa-chart-pie text-brand-500 mr-1"></i> Root Cause Analysis
+                            </span>
+                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full border border-slate-700">
+                                <i class="fa-solid fa-user-tie text-brand-500 mr-1"></i> Process Leadership
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Intro Info -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div>
+                            <span class="text-brand-400 font-semibold tracking-wide uppercase text-sm">Welcome to my professional portfolio</span>
+                            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-1 tracking-tight">
+                                James Benette O. Morato
+                            </h1>
+                            <p class="text-xl text-brand-500 font-medium mt-2">
+                                Training & Quality Analyst | QA Supervisor & Data Specialist
+                            </p>
+                        </div>
+
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Results-driven Quality Assurance professional with expertise spanning across financial tech, telecommunications, content moderation, ridesharing, and commercial operations. Proven track record in conducting RCA, managing calibrations, enhancing auditor precision, and driving operational performance metrics.
+                        </p>
+
+                        <!-- Personal Details Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800 text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Location</p>
+                                    <p class="text-sm font-semibold text-slate-200">Antipolo City, Rizal, PH</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Email</p>
+                                    <a href="mailto:benette019@gmail.com" class="text-sm font-semibold text-slate-200 hover:text-brand-400 transition">benette019@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Phone</p>
+                                    <p class="text-sm font-semibold text-slate-200">09054553319</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Personal Info</p>
+                                    <p class="text-sm font-semibold text-slate-200">31 yrs old | Married</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
+                            <a href="#contact" class="px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold transition shadow-lg shadow-brand-600/30 flex items-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Get In Touch</span>
+                            </a>
+                            <a href="#experience" class="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition flex items-center space-x-2">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>View Experience</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metric Summary Bar -->
+        <section class="py-8 bg-slate-800/50 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4">
+                        <span class="block text-3xl sm:text-4xl font-extrabold text-brand-400">9+</span>
+                        <span class="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium">Years Experience</span>
+                    </div>
+                    <div class="p-4">
+                        <span class="block text-3xl sm:text-4xl font-extrabold text-brand-400">5+</span>
+                        <span class="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium">Major Domains</span>
+                    </div>
+                    <div class="p-4">
+                        <span class="block text-3xl sm:text-4xl font-extrabold text-brand-400">100%</span>
+                        <span class="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium">RCA & Calibration Focus</span>
+                    </div>
+                    <div class="p-4">
+                        <span class="block text-3xl sm:text-4xl font-extrabold text-brand-400">Audit</span>
+                        <span class="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium">Voice, Chat & Content</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Timeline Section -->
+        <section id="experience" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Work Experience</h2>
+                    <p class="text-slate-400 mt-2 max-w-xl mx-auto">A detailed timeline of my operational roles, supervisory quality tasks, and continuous process improvements.</p>
+                </div>
+
+                <div class="relative timeline-line space-y-12">
+                    
+                    <!-- Experience 1: ReSource Pro Ph (NEW) -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-600 text-white z-10 font-bold border-4 border-slate-900 md:absolute md:left-1/2 md:-translate-x-1/2">
+                            <i class="fa-solid fa-star text-xs"></i>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pr-12 md:text-right mt-4 md:mt-0">
+                            <span class="inline-block px-3 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/30 text-xs font-semibold rounded-full mb-2">March 2026 – Present</span>
+                            <h3 class="text-xl font-bold text-white">ReSource Pro Ph</h3>
+                            <p class="text-brand-400 font-medium text-sm">Training And Quality Analyst</p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                            <div class="glass-card p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-brand-500/40 transition duration-300">
+                                <p class="text-slate-300 text-sm mb-3">Responsible for key operational quality controls, root cause evaluations, and structured training deliverables.</p>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>Training Execution:</strong> Facilitating comprehensive learning programs and performance onboarding.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>QA Auditing:</strong> Reviewing and scoring performance interactions against benchmark guidelines.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>Reporting & RCA:</strong> Synthesizing audit findings into actionable Root Cause Analysis to enhance accuracy metrics.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: Movate -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 z-10 font-bold border-4 border-slate-900 md:absolute md:left-1/2 md:-translate-x-1/2">
+                            <i class="fa-solid fa-briefcase text-xs"></i>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pr-12 md:text-right order-1 md:order-1 mt-4 md:mt-0">
+                            <div class="glass-card p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-brand-500/40 transition duration-300">
+                                <ul class="space-y-2 text-sm text-slate-400 text-left">
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>Quality Assurance Supervision:</strong> Managed QA Auditing ("Audit the Auditor"), calibration sessions, process improvement, and compliance monitoring.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>Multi-Account Portfolio:</strong> Overseen Telco, Retail, and Kiosk (Buy, Sell, & Trade) programs.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>Financial Tech Specialist:</strong> Evaluated calls for BAU/ABAY audits, performed data management, client reporting, and RCA on escalations.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-12 order-2 md:order-2 mt-4 md:mt-0">
+                            <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-semibold rounded-full mb-2">Oct 28, 2024 – Feb 20, 2026</span>
+                            <h3 class="text-xl font-bold text-white">Movate</h3>
+                            <p class="text-brand-400 font-medium text-sm">Quality Analyst Supervisor</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3: Accenture -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 z-10 font-bold border-4 border-slate-900 md:absolute md:left-1/2 md:-translate-x-1/2">
+                            <i class="fa-solid fa-headset text-xs"></i>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pr-12 md:text-right mt-4 md:mt-0">
+                            <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-semibold rounded-full mb-2">Feb 19, 2024 – Aug 22, 2024</span>
+                            <h3 class="text-xl font-bold text-white">Accenture</h3>
+                            <p class="text-brand-400 font-medium text-sm">Quality Analyst CL 11 (Voice Telco Account)</p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                            <div class="glass-card p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-brand-500/40 transition duration-300">
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span>Worked with QA leadership to pinpoint top factors impairing accuracy & compliance metrics.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span>Evaluated 5–8 calls per day and managed complex dispute resolutions.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span>Executed detailed RCA on call parameters: DST, AHT, and Sales Pitch efficiency.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4: TaskUs Inc. -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 z-10 font-bold border-4 border-slate-900 md:absolute md:left-1/2 md:-translate-x-1/2">
+                            <i class="fa-solid fa-list-check text-xs"></i>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pr-12 md:text-right order-1 md:order-1 mt-4 md:mt-0">
+                            <div class="glass-card p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-brand-500/40 transition duration-300">
+                                <ul class="space-y-2 text-sm text-slate-400 text-left">
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>Quality Analyst (Content Moderation):</strong> Led content auditing, dispute handling, program trend analysis, and actionable mitigation plans.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span><strong>CSR (2016–2020, Ridesharing Campaign):</strong> Handled 100+ daily customer/driver interactions across Chariot Eats & Partner Drivers/Riders (NAM & UKI).</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-12 order-2 md:order-2 mt-4 md:mt-0">
+                            <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-semibold rounded-full mb-2">Sept 14, 2016 – Dec 29, 2023</span>
+                            <h3 class="text-xl font-bold text-white">TaskUs Inc.</h3>
+                            <p class="text-brand-400 font-medium text-sm">Quality Analyst & Customer Service Representative</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 5: Convergys -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 z-10 font-bold border-4 border-slate-900 md:absolute md:left-1/2 md:-translate-x-1/2">
+                            <i class="fa-solid fa-comments text-xs"></i>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pr-12 md:text-right mt-4 md:mt-0">
+                            <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 border border-slate-700 text-xs font-semibold rounded-full mb-2">March 2015 – September 2016</span>
+                            <h3 class="text-xl font-bold text-white">Convergys Philippines</h3>
+                            <p class="text-brand-400 font-medium text-sm">Customer Service Representative (Online Payment Processor Account)</p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                            <div class="glass-card p-6 rounded-xl border border-slate-700/50 shadow-lg hover:border-brand-500/40 transition duration-300">
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span>Managed 50+ personalized daily customer interactions via call, chat, and email to ensure client retention.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check text-brand-400 mt-1 mr-2 text-xs"></i>
+                                        <span>Initiated outbound communications for claim/dispute resolutions.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Expertise Section with Interactive Filter -->
+        <section id="skills" class="py-20 bg-slate-800/30 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Skills & Core Expertise</h2>
+                    <p class="text-slate-400 mt-2">Filter skills by domain and proficiency area.</p>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap justify-center gap-2 mt-6" id="skillsFilter">
+                        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-medium transition">All Skills</button>
+                        <button data-filter="qa" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium transition">Quality Assurance</button>
+                        <button data-filter="data" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium transition">Data & Analytics</button>
+                        <button data-filter="leadership" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium transition">Leadership</button>
+                        <button data-filter="domain" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium transition">Domain Knowledge</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skillsGrid">
+                    
+                    <!-- Quality Assurance Skills -->
+                    <div class="skill-card glass-card p-6 rounded-xl border border-slate-700/50" data-category="qa">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-chart text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">QA Auditing</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">Calls, Chat, Email & Content Moderation Auditing with precision compliance benchmarks.</p>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full w-[95%]"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card p-6 rounded-xl border border-slate-700/50" data-category="qa">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                                <i class="fa-solid fa-sliders text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">Calibration & Compliance</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">Internal & External Calibration Sessions, alignment with client policy standard operational guidelines.</p>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full w-[90%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Data Skills -->
+                    <div class="skill-card glass-card p-6 rounded-xl border border-slate-700/50" data-category="data">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                                <i class="fa-solid fa-diagram-project text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">Root Cause Analysis (RCA)</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">DST, AHT, Sales Pitch & Error Trend analysis leading to actionable corrective plans.</p>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full w-[92%]"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card p-6 rounded-xl border border-slate-700/50" data-category="data">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                                <i class="fa-solid fa-file-excel text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">MS Excel & Data Visualization</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">Advanced functions (VLOOKUP, Pivot Tables), client dashboard reporting & metrics tracking.</p>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full w-[88%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Leadership Skills -->
+                    <div class="skill-card glass-card p-6 rounded-xl border border-slate-700/50" data-category="leadership">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                                <i class="fa-solid fa-users-gear text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">Coaching & Team Management</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">Auditor supervision, feedback delivery, performance coaching, and stakeholder management.</p>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full w-[85%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Domain Knowledge -->
+                    <div class="skill-card glass-card p-6 rounded-xl border border-slate-700/50" data-category="domain">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                                <i class="fa-solid fa-globe text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">Multi-Domain Expertise</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">Financial Services, Ridesharing, Logistics, Content Moderation, Telco & Retail / Kiosk Trade.</p>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full w-[95%]"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section Grid -->
+        <section id="education" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Education & Background</h2>
+                    <p class="text-slate-400 mt-2">Academic qualifications and educational timeline.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div class="glass-card p-6 rounded-xl border border-slate-700/50 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-brand-400">Graduated SY 2019 - 2020</span>
+                            <h3 class="text-lg font-bold text-white mt-1">Bachelor of Arts in Theology</h3>
+                            <p class="text-slate-300 text-sm">All Nations College and Technology</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-slate-700/50 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-brand-400">Graduated SY 2017 - 2018</span>
+                            <h3 class="text-lg font-bold text-white mt-1">Bachelor of Christian Education</h3>
+                            <p class="text-slate-300 text-sm">Antioch Theological Seminary</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-slate-700/50 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-brand-400">Graduated SY 2010 - 2011</span>
+                            <h3 class="text-lg font-bold text-white mt-1">High School Diploma</h3>
+                            <p class="text-slate-300 text-sm">Sta. Elena High School</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-slate-700/50 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-brand-400">Graduated SY 2005 - 2006</span>
+                            <h3 class="text-lg font-bold text-white mt-1">Elementary Diploma</h3>
+                            <p class="text-slate-300 text-sm">Sto. Niño Elementary School</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-800/40 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <h2 class="text-3xl font-bold text-white">Let's Connect</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Interested in operational collaboration, quality management consultation, or leadership inquiries? Reach out via direct message or email.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-center space-x-4 p-4 rounded-xl glass-card border border-slate-700/50">
+                                <div class="w-10 h-10 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Direct Email</p>
+                                    <a href="mailto:benette019@gmail.com" class="text-sm font-semibold text-white hover:text-brand-400 transition">benette019@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 p-4 rounded-xl glass-card border border-slate-700/50">
+                                <div class="w-10 h-10 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Phone & Mobile</p>
+                                    <p class="text-sm font-semibold text-white">09054553319</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 p-4 rounded-xl glass-card border border-slate-700/50">
+                                <div class="w-10 h-10 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Address</p>
+                                    <p class="text-sm font-semibold text-white">188 Ruhat 3, Mambugan, Antipolo City, Rizal 1870</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <form id="contactForm" class="glass-card p-8 rounded-2xl border border-slate-700/50 space-y-4">
+                            <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Name</label>
+                                    <input type="text" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Email</label>
+                                    <input type="email" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-500 text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Subject</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-500 text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Message</label>
+                                <textarea rows="4" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-500 text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-lg transition shadow-lg shadow-brand-600/30">
+                                Send Message
+                            </button>
+                            <div id="formStatus" class="hidden text-center text-sm font-medium text-brand-400 mt-2"></div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© <span id="currentYear"></span> James Benette O. Morato. All rights reserved.</p>
+            <p class="mt-1 text-slate-600">Training & Quality Analyst Specialist</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set dynamic current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('light')) {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                document.body.classList.replace('bg-slate-100', 'bg-slate-900');
+                document.body.classList.replace('text-slate-900', 'text-slate-100');
+            } else {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                document.body.classList.replace('bg-slate-900', 'bg-slate-100');
+                document.body.classList.replace('text-slate-100', 'text-slate-900');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            });
+        });
+
+        // Interactive Skills Filter
+        const filterBtns = document.querySelectorAll('#skillsFilter button');
+        const skillCards = document.querySelectorAll('#skillsGrid .skill-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update button active state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-600', 'text-white');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                btn.classList.remove('bg-slate-800', 'text-slate-300');
+                btn.classList.add('bg-brand-600', 'text-white');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                skillCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact Form Submission (Mock Response)
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formStatus.textContent = "Thank you! Your message has been sent successfully.";
+            formStatus.classList.remove('hidden');
+            contactForm.reset();
+
+            setTimeout(() => {
+                formStatus.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
