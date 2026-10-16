@@ -3,183 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Benette O. Morato | Training & Quality Analyst</title>
-    <!-- Tailwind CSS -->
+    <title>James Benette O. Morato | Professional Resume & Portfolio</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        slate: {
-                            850: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617',
-                        },
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
+                        slateblue: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#102a43',
+                            950: '#0b192c',
                         }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .light .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-        }
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 20px;
-            width: 2px;
-            background: #334155;
-        }
-        @media (min-width: 768px) {
-            .timeline-line::before {
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        body {
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col">
+<body class="bg-slateblue-950 text-slateblue-100 antialiased selection:bg-slateblue-600 selection:text-white">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800 transition-colors duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-3">
-                    <span class="w-3 h-3 bg-brand-500 rounded-full animate-pulse"></span>
-                    <a href="#" class="font-bold text-xl tracking-tight text-white hover:text-brand-400 transition">
-                        James <span class="text-brand-500">Morato</span>
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slateblue-900/90 backdrop-blur-md border-b border-slateblue-800 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-slateblue-700 border-2 border-slateblue-400 flex items-center justify-center font-bold text-lg text-white shadow-md group-hover:scale-105 transition">
+                    JM
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight text-white block">James Benette O. Morato</span>
+                    <span class="text-xs text-slateblue-400 block">Training & Quality Analyst</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="text-slateblue-300 hover:text-white transition">About</a>
+                <a href="#experience" class="text-slateblue-300 hover:text-white transition">Experience</a>
+                <a href="#skills" class="text-slateblue-300 hover:text-white transition">Skills</a>
+                <a href="#education" class="text-slateblue-300 hover:text-white transition">Education</a>
+                <a href="#contact" class="px-4 py-2 bg-slateblue-600 hover:bg-slateblue-500 text-white rounded-lg shadow transition">Contact Me</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slateblue-300 hover:text-white focus:outline-none text-xl p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slateblue-900 border-b border-slateblue-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block text-slateblue-300 hover:text-white py-1">About</a>
+            <a href="#experience" class="block text-slateblue-300 hover:text-white py-1">Experience</a>
+            <a href="#skills" class="block text-slateblue-300 hover:text-white py-1">Skills</a>
+            <a href="#education" class="block text-slateblue-300 hover:text-white py-1">Education</a>
+            <a href="#contact" class="block text-center w-full py-2 bg-slateblue-600 text-white rounded-lg mt-2">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="pt-28 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+        <!-- Hero / Profile Section -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-slateblue-900/60 border border-slateblue-800 p-8 sm:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-20 -top-20 w-64 h-64 bg-slateblue-700/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <!-- Profile Photo -->
+            <div class="md:col-span-4 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-slateblue-500 to-slateblue-300 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-300"></div>
+                    <div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-4 border-slateblue-700 bg-slateblue-800 shadow-xl">
+                        <img src="profile.png" alt="James Benette O. Morato" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60'" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Intro -->
+            <div class="md:col-span-8 space-y-4 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slateblue-800 border border-slateblue-700 text-xs text-slateblue-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open for Opportunities
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    James Benette O. Morato
+                </h1>
+                <p class="text-lg text-slateblue-300 font-medium">
+                    Training & Quality Analyst | QA Supervisor | Insurance Compliance & Property Inspector Specialist
+                </p>
+                <p class="text-slateblue-400 text-sm sm:text-base leading-relaxed">
+                    Detail-oriented professional with over 10 years of robust experience in the BPO industry spanning Quality Assurance leadership, auditing, training, process compliance, root cause analysis (RCA), and insurance back-office operations. Dedicated to driving operational excellence and team accuracy.
+                </p>
+
+                <!-- Quick Info Badges -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2 text-xs text-slateblue-300">
+                    <div class="flex items-center gap-1.5 bg-slateblue-800/80 px-3 py-1.5 rounded-lg border border-slateblue-700">
+                        <i class="fa-solid fa-location-dot text-slateblue-400"></i> Antipolo City, Rizal, PH
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-slateblue-800/80 px-3 py-1.5 rounded-lg border border-slateblue-700">
+                        <i class="fa-solid fa-envelope text-slateblue-400"></i> benette019@gmail.com
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-slateblue-800/80 px-3 py-1.5 rounded-lg border border-slateblue-700">
+                        <i class="fa-solid fa-phone text-slateblue-400"></i> 09054553319
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="px-6 py-2.5 bg-slateblue-600 hover:bg-slateblue-500 text-white font-medium rounded-xl shadow transition flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-paper-plane"></i> Get in Touch
                     </a>
-                </div>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                    <a href="#about" class="hover:text-brand-400 transition">About</a>
-                    <a href="#experience" class="hover:text-brand-400 transition">Experience</a>
-                    <a href="#skills" class="hover:text-brand-400 transition">Skills & Expertise</a>
-                    <a href="#education" class="hover:text-brand-400 transition">Education</a>
-                    <a href="#contact" class="hover:text-brand-400 transition">Contact</a>
-                </div>
-
-                <div class="flex items-center space-x-3">
-                    <!-- Theme Toggle -->
-                    <button id="themeToggle" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition" title="Toggle Theme">
-                        <i class="fa-solid fa-moon text-lg" id="themeIcon"></i>
-                    </button>
-                    <!-- Mobile menu button -->
-                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
-                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    <button onclick="downloadCV()" class="px-6 py-2.5 bg-slateblue-800 hover:bg-slateblue-700 text-slateblue-200 border border-slateblue-700 font-medium rounded-xl transition flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-download"></i> Download Resume Info
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
-            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">About</a>
-            <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Experience</a>
-            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Skills</a>
-            <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Education</a>
-            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Contact</a>
-        </div>
-    </nav>
+        <!-- Experience Section -->
+        <section id="experience" class="space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slateblue-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                        <i class="fa-solid fa-briefcase text-slateblue-400"></i> Professional Experience
+                    </h2>
+                    <p class="text-sm text-slateblue-400">A comprehensive track record of quality assurance, training, and operational leadership.</p>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <button onclick="filterExperience('all')" class="exp-filter-btn px-3 py-1.5 rounded-lg bg-slateblue-600 text-white font-medium transition">All Roles</button>
+                    <button onclick="filterExperience('qa')" class="exp-filter-btn px-3 py-1.5 rounded-lg bg-slateblue-800 text-slateblue-300 hover:bg-slateblue-700 transition">QA & Training</button>
+                    <button onclick="filterExperience('csr')" class="exp-filter-btn px-3 py-1.5 rounded-lg bg-slateblue-800 text-slateblue-300 hover:bg-slateblue-700 transition">Customer Service</button>
+                </div>
+            </div>
 
-    <!-- Main Content Container -->
-    <main class="flex-grow">
-        <!-- Hero / About Section -->
-        <section id="about" class="py-16 lg:py-24 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Profile Photo & Ring -->
-                    <div class="lg:col-span-5 flex flex-col items-center">
-                        <div class="relative group">
-                            <!-- Glowing aura -->
-                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-slate-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                            <!-- Image Container -->
-                            <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl bg-slate-800">
-                                <img src="profile.png" 
-                                     alt="James Benette O. Morato" 
-                                     class="w-full h-full object-cover object-top"
-                                     onerror="this.src='https://placehold.co/400x400/334155/ffffff?text=James+Morato'">
-                            </div>
+            <!-- Experience Timeline Container -->
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- ReSource Pro Ph (New Role) -->
+                <div class="exp-card qa bg-slateblue-900/60 border-2 border-slateblue-600 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden transition hover:border-slateblue-400">
+                    <div class="absolute top-0 right-0 bg-slateblue-600 text-white text-xs px-4 py-1.5 rounded-bl-xl font-semibold tracking-wide">
+                        Latest Role
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Training And Quality Analyst</h3>
+                            <p class="text-slateblue-300 font-medium text-sm">ReSource Pro Ph</p>
                         </div>
-                        
-                        <!-- Quick Stats Badge Bar -->
-                        <div class="mt-6 flex flex-wrap justify-center gap-2">
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full border border-slate-700">
-                                <i class="fa-solid fa-shield-halved text-brand-500 mr-1"></i> QA Analytics
-                            </span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full border border-slate-700">
-                                <i class="fa-solid fa-chart-pie text-brand-500 mr-1"></i> Root Cause Analysis
-                            </span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full border border-slate-700">
-                                <i class="fa-solid fa-user-tie text-brand-500 mr-1"></i> Process Leadership
-                            </span>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slateblue-800 border border-slateblue-700 text-xs font-semibold text-slateblue-200 rounded-lg w-fit">
+                            <i class="fa-regular fa-calendar-days text-slateblue-400"></i> March 2026 – Present
                         </div>
                     </div>
-
-                    <!-- Intro Info -->
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div>
-                            <span class="text-brand-400 font-semibold tracking-wide uppercase text-sm">Welcome to my professional portfolio</span>
-                            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-1 tracking-tight">
-                                James Benette O. Morato
-                            </h1>
-                            <p class="text-xl text-brand-500 font-medium mt-2">
-                                Training & Quality Analyst | QA Supervisor & Data Specialist
-                            </p>
-                        </div>
-
-                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            Results-driven Quality Assurance professional with expertise spanning across financial tech, telecommunications, content moderation, ridesharing, and commercial operations. Proven track record in conducting RCA, managing calibrations, enhancing auditor precision, and driving operational performance metrics.
-                        </p>
-
-                        <!-- Personal Details Grid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800 text-left">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-400">Location</p>
-                                    <p class="text-sm font-semibold text-slate-200">Antipolo City, Rizal, PH</p>
-                                </div>
+                    <div class="mb-4 inline-block bg-slateblue-800/90 border border-slateblue-700 px-3 py-1.5 rounded-lg text-xs text-slateblue-200 font-medium">
+                        <i class="fa-solid fa-shield-halved text-slateblue-400 mr-1.5"></i> Nature of Work: Insurance Back Office Compliance and Property Inspector Officer
+                    </div>
+                    <div class="border-t border-slateblue-800 pt-4 mt-2">
+                        <span class="text-xs font-semibold text-slateblue-400 uppercase tracking-wider block mb-2">Core Tasks & Responsibilities:</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="bg-slateblue-950/60 border border-slateblue-800 p-3 rounded-xl text-center">
+                                <i class="fa-solid fa-chalkboard-user text-slateblue-400 mb-1 text-sm"></i>
+                                <span class="block text-xs font-medium text-slateblue-200">Training</span>
                             </div>
+                            <div class="bg-slateblue-950/60 border border-slateblue-800 p-3 rounded-xl text-center">
+                                <i class="fa-solid fa-magnifying-glass-chart text-slateblue-400 mb-1 text-sm"></i>
+                                <span class="block text-xs font-medium text-slateblue-200">Auditing</span>
+                            </div>
+                            <div class="bg-slateblue-950/60 border border-slateblue-800 p-3 rounded-xl text-center">
+                                <i class="fa-solid fa-chart-line text-slateblue-400 mb-1 text-sm"></i>
+                                <span class="block text-xs font-medium text-slateblue-200">Reporting</span>
+                            </div>
+                            <div class="bg-slateblue-950/60 border border-slateblue-800 p-3 rounded-xl text-center">
+                                <i class="fa-solid fa-gears text-slateblue-400 mb-1 text-sm"></i>
+                                <span class="block text-xs font-medium text-slateblue-200">RCA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
+                <!-- Movate -->
+                <div class="exp-card qa bg-slateblue-900/60 border border-slateblue-800 rounded-2xl p-6 sm:p-8 shadow-lg transition hover:border-slateblue-700">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Quality Analyst Supervisor</h3>
+                            <p class="text-slateblue-300 font-medium text-sm">Movate</p>
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slateblue-800 border border-slateblue-700 text-xs font-semibold text-slateblue-300 rounded-lg w-fit">
+                            <i class="fa-regular fa-calendar-days text-slateblue-400"></i> Oct 28, 2024 – Feb 20, 2026
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slateblue-300 list-disc list-inside">
+                        <li>QA Auditing (Audit the auditor), process improvement, calibration, and compliance monitoring.</li>
+                        <li>Conducted Root Cause Analysis (RCA), data visualization, client reporting, and performance tracking.</li>
+                        <li>Handled multi-accounts: Telco, Retail account, & Kiosk (Buy, Sell, & Trade).</li>
+                        <li>Evaluated calls for BAU/ABAY audits, participated in internal and external calibrations.</li>
+                    </ul>
+                </div>
+
+                <!-- Accenture -->
+                <div class="exp-card qa bg-slateblue-900/60 border border-slateblue-800 rounded-2xl p-6 sm:p-8 shadow-lg transition hover:border-slateblue-700">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Quality Analyst CL 11</h3>
+                            <p class="text-slateblue-300 font-medium text-sm">Accenture</p>
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slateblue-800 border border-slateblue-700 text-xs font-semibold text-slateblue-300 rounded-lg w-fit">
+                            <i class="fa-regular fa-calendar-days text-slateblue-400"></i> Feb 19, 2024 – Aug 22, 2024
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slateblue-300 list-disc list-inside">
+                        <li>Worked in a voice Telco account, closely collaborating with leaders to identify top accuracy & compliance issues.</li>
+                        <li>Evaluated 5-8 calls per day, handled disputes, and conducted RCA on DST, AHT, and Sales Pitch metrics.</li>
+                        <li>Facilitated internal and external calibration meetings to align with client policies and guidelines.</li>
+                    </ul>
+                </div>
+
+                <!-- TaskUs Inc. -->
+                <div class="exp-card qa csr bg-slateblue-900/60 border border-slateblue-800 rounded-2xl p-6 sm:p-8 shadow-lg transition hover:border-slateblue-700">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Quality Analyst & Customer Service Representative</h3>
+                            <p class="text-slateblue-300 font-medium text-sm">TaskUs Inc.</p>
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slateblue-800 border border-slateblue-700 text-xs font-semibold text-slateblue-300 rounded-lg w-fit">
+                            <i class="fa-regular fa-calendar-days text-slateblue-400"></i> Sept 14, 2016 – Dec 29, 2023
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-sm text-slateblue-300">
+                        <p><strong class="text-white">Quality Analyst (Content Moderation Campaign):</strong> Content auditing, disputes, and RCA reports within strict timeframes. Built trend analyses and provided effective action plans.</p>
+                        <p><strong class="text-white">Customer Service Representative (2016 – 2020 | Ridesharing Campaign):</strong> Handled 100+ interactions daily troubleshooting app issues, account statuses, and earnings for LOBs including Chariot Eats (NAM) and Chariot Partner Drivers & Riders (NAM & UKI).</p>
+                    </div>
+                </div>
+
+                <!-- Convergys Philippines -->
+                <div class="exp-card csr bg-slateblue-900/60 border border-slateblue-800 rounded-2xl p-6 sm:p-8 shadow-lg transition hover:border-slateblue-700">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Customer Service Representative</h3>
+                            <p class="text-slateblue-300 font-medium text-sm">Convergys Philippines</p>
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slateblue-800 border border-slateblue-700 text-xs font-semibold text-slateblue-300 rounded-lg w-fit">
+                            <i class="fa-regular fa-calendar-days text-slateblue-400"></i> March 2015 – September 2016
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slateblue-300 list-disc list-inside">
+                        <li>Managed an online payment processor account with 50+ customer interactions per day via chat, email, and calls.</li>
+                        <li>Conducted outbound calls to update customers regarding dispute and claim statuses while ensuring client retention.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="space-y-8">
+            <div class="border-b border-slateblue-800 pb-4">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                    <i class="fa-solid fa-wand-magic-sparkles text-slateblue-400"></i> Key Skills & Competencies
+                </h2>
+                <p class="text-sm text-slateblue-400">Core proficiencies honed across 10+ years of BPO and quality management experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Quality Assurance -->
+                <div class="bg-slateblue-900/60 border border-slateblue-800 rounded-2xl p-6 shadow-lg space-y-4">
+                    <div class="w-12 h-12 rounded-x               </div>
                                 <div>
                                     <p class="text-xs text-slate-400">Email</p>
                                     <a href="mailto:benette019@gmail.com" class="text-sm font-semibold text-slate-200 hover:text-brand-400 transition">benette019@gmail.com</a>
